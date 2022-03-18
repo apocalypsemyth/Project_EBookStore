@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace EBookStore
+namespace EBookStore.Components
 {
-    public partial class Main : System.Web.UI.MasterPage
+    public partial class ucFooter : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

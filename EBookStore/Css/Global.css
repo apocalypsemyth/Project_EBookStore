@@ -37,14 +37,11 @@
     grid-template-rows: 10vh auto 25vh;
 }
 
-    .app-preset form {
-        padding-top: 3rem;
-        display: flex;
-        flex-direction: column;
+    .app-preset main {
         max-width: 70vw;
         width: 70vw;
         margin-left: 15vw;
-        padding-bottom: 5rem;
+        padding: 5rem 0;
         background-color: var(--primary-light-bg-color);
         box-shadow: var(--shadow-effect);
     }

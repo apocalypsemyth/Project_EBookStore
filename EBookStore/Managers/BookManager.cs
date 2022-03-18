@@ -10,6 +10,57 @@ namespace EBookStore.Managers
 {
     public class BookManager
     {
+        public List<BookModel> GetBookWithLabelList(string searchText)
+        {
+            string whereCondition = "";
+            string joinCondition = "";
+            if (!string.IsNullOrWhiteSpace(searchText))
+            {
+                whereCondition = "WHERE BookName LIKE @BookName";
+                joinCondition = "JOIN Labels ON Books.LabelID = Labels.LabelID";
+            }
+
+            string connectString = ConfigHelper.GetConnectionString();
+            string commandText =
+                $@" 
+                    SELECT *
+                    FROM Books 
+                    {joinCondition}
+                    {whereCondition}
+                    ORDER BY Date DESC 
+                ";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectString))
+                {
+                    using (SqlCommand command = new SqlCommand(commandText, conn))
+                    {
+                        if (!string.IsNullOrWhiteSpace(searchText))
+                        {
+                            command.Parameters.AddWithValue("@BookName", searchText);
+                        }
+
+                        conn.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        List<BookModel> retList = new List<BookModel>();    // 將資料庫內容轉為自定義型別清單
+                        while (reader.Read())
+                        {
+                            BookModel info = this.BuildBookModel(reader);
+                            retList.Add(info);
+                        }
+
+                        return retList;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog("BookManager.GetBookWithLabelList", ex);
+                throw;
+            }
+        }
+
         public List<BookModel> GetAdminBookWithLabelList()
         {
             string joinCondition = "JOIN Labels ON Books.LabelID = Labels.LabelID";

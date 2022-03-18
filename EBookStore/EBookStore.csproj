@@ -72,6 +72,8 @@
     <Content Include="BackAdmin\Index.aspx" />
     <Content Include="BookDetail.aspx" />
     <Content Include="BookList.aspx" />
+    <Content Include="Components\ucFooter.ascx" />
+    <Content Include="Components\ucNavbar.ascx" />
     <Content Include="Css\BookDetail.css" />
     <Content Include="Css\BookList.css" />
     <Content Include="Css\Components\Footer.css" />
@@ -124,6 +126,20 @@
     </Compile>
     <Compile Include="BookList.aspx.designer.cs">
       <DependentUpon>BookList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucFooter.ascx.cs">
+      <DependentUpon>ucFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\ucFooter.ascx.designer.cs">
+      <DependentUpon>ucFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ucNavbar.ascx.cs">
+      <DependentUpon>ucNavbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\ucNavbar.ascx.designer.cs">
+      <DependentUpon>ucNavbar.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
