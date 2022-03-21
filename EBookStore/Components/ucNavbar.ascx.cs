@@ -10,19 +10,22 @@ namespace EBookStore.Components
 {
     public partial class ucNavbar : System.Web.UI.UserControl
     {
-        public string SearchText { get; set; }
-
-        private BookManager _bookMgr = new BookManager();
+        public delegate void BtnSearch(object sender, string SearchText);
+        public event BtnSearch BtnSearchClick = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = this.txtSearch.Text;
-            var list = this._bookMgr.GetBookWithLabelList(searchText);
+
+            if (!string.IsNullOrWhiteSpace(searchText) && this.BtnSearchClick != null)
+                this.BtnSearchClick(this, searchText);
+
+            this.txtSearch.Text = "";
         }
     }
 }

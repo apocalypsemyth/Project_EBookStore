@@ -14,7 +14,7 @@
                 %>'>
                         <p>
                             <a href="BookDetail.aspx?ID=<%# Eval("BookID") %>" title="前往查看：<%# Eval("BookName") %>">
-                                <img src="<%# Eval("Image") %>" width="200" height="160" />
+                                <img src="<%# Eval("Image") %>" />
                             </a>
                         </p>
                     </asp:PlaceHolder>

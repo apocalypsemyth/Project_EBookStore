@@ -18,6 +18,7 @@ namespace EBookStore.Models
         public bool IsEnable { get; set; }
         public DateTime Date { get; set; }
         public DateTime? EndDate { get; set; }
+        public string LabelName { get; set; }
     }
 }
 

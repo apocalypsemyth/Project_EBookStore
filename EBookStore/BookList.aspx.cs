@@ -16,8 +16,8 @@ namespace EBookStore
         {
             if (!this.IsPostBack)
             {
-                var list = this._bookMgr.GetAdminBookWithLabelList();
-                
+                var list = this._bookMgr.GetBookList();
+
                 if (list.Count == 0)
                 {
                     this.rptList.Visible = false;

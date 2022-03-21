@@ -16,7 +16,7 @@ namespace EBookStore.BackAdmin
         {
             if (!this.IsPostBack)
             {
-                var list = this._bookMgr.GetAdminBookWithLabelList();
+                var list = this._bookMgr.GetBookList();
 
                 if (list.Count == 0)
                 {

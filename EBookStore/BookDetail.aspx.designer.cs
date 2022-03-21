@@ -60,6 +60,15 @@ namespace EBookStore
         protected global::System.Web.UI.WebControls.Literal ltlDescription;
 
         /// <summary>
+        /// ltlPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlPrice;
+
+        /// <summary>
         /// ltlDate control.
         /// </summary>
         /// <remarks>
@@ -76,5 +85,23 @@ namespace EBookStore
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltlEndDate;
+
+        /// <summary>
+        /// btnAddShoppingCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddShoppingCart;
+
+        /// <summary>
+        /// rptMayInterestBookList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptMayInterestBookList;
     }
 }

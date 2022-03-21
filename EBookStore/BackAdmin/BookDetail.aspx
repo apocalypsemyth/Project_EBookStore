@@ -11,10 +11,6 @@
             <td> <asp:TextBox ID="txtCategoryName" runat="server"></asp:TextBox> </td>
         </tr>
         <tr>
-            <th> 標籤 (*) </th>
-            <td> <asp:TextBox ID="txtLabelName" runat="server"></asp:TextBox> </td>
-        </tr>
-        <tr>
             <th> 作者 (*) </th>
             <td> <asp:TextBox ID="txtAuthorName" runat="server"></asp:TextBox> </td>
         </tr>

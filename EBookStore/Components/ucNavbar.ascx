@@ -16,7 +16,11 @@
 
     <div class="navbar__seperator">
         <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+        <%--這是利用Jquery請求API至資料庫抓資料部分實作--%>
+        <%--<input type="text" id="txtSearch2" name="searchText" />--%>
         <asp:Button ID="btnSearch" runat="server" Text="搜尋" OnClick="btnSearch_Click" />
+        <%--這是利用Jquery請求API至資料庫抓資料部分實作--%>
+        <%--<button type="submit" id="btnSearch2">搜尋</button>--%>
     </div>
 
     <nav class="navbar__navlist-container">
@@ -30,7 +34,11 @@
                 <a href="pages/partners.html">合作夥伴</a>
             </li>
             <li class="navbar__navitem">
-                <a href="pages/contact.html">與我們聯絡</a>
+                <button type="button" class="btn btn-primary position-relative">
+                    ShoppingCart
+                        <asp:Label ID="lblShoppingCartBadge" CssClass="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" runat="server">
+                        </asp:Label>
+                </button>
             </li>
         </ul>
     </nav>

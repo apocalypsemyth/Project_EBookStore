@@ -1,4 +1,5 @@
-﻿using EBookStore.Managers;
+﻿using EBookStore.EBookStore.ORM;
+using EBookStore.Managers;
 using EBookStore.Models;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,6 @@ namespace EBookStore.BackAdmin
     {
         private bool _isEditMode = false;
         private BookManager _bookMgr = new BookManager();
-        private LabelManager _labelMgr = new LabelManager();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,9 +55,6 @@ namespace EBookStore.BackAdmin
             if (string.IsNullOrWhiteSpace(this.txtCategoryName.Text))
                 errorMsgList.Add("類別為必填。");
             
-            if (string.IsNullOrWhiteSpace(this.txtLabelName.Text))
-                errorMsgList.Add("標籤為必填。");
-
             if (string.IsNullOrWhiteSpace(this.txtAuthorName.Text))
                 errorMsgList.Add("作者為必填。");
 
@@ -88,19 +85,13 @@ namespace EBookStore.BackAdmin
                 return;
             }
 
-            BookModel bookModel = new BookModel()
+            Book bookModel = new Book()
             {
                 CategoryName = this.txtCategoryName.Text.Trim(),
                 AuthorName = this.txtAuthorName.Text.Trim(),
                 BookName = this.txtBookName.Text.Trim(),
                 Description = this.txtDescription.Text.Trim(),
                 IsEnable = this.ckbIsEnable.Checked,
-            };
-
-            string labelName = this.txtLabelName.Text.Trim();
-            LabelModel labelModel = new LabelModel()
-            {
-                LabelName = labelName,
             };
 
             if (this.fuImage.HasFile)  // 儲存檔案，並將路徑寫至 model ，以供保存
@@ -126,13 +117,11 @@ namespace EBookStore.BackAdmin
 
             // Temp UserID
             string userID = "11f49178-69bc-4057-ad06-7cbb74b4e38d";
+            bool isSuccess = Guid.TryParse(userID, out Guid gUserID);
 
             // 儲存
-            this._labelMgr.CreateLabel(labelModel);
-            Guid labelID = this._labelMgr.GetLabel(labelName).LabelID;
-
-            if (labelID != null)
-                this._bookMgr.CreateBook(bookModel, userID, labelID);
+            if (isSuccess)
+                this._bookMgr.CreateBook(bookModel, gUserID);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
