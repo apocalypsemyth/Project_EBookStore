@@ -63,6 +63,9 @@ namespace EBookStore.BackAdmin
 
             if (string.IsNullOrWhiteSpace(this.txtDescription.Text))
                 errorMsgList.Add("描述為必填。");
+            
+            if (string.IsNullOrWhiteSpace(this.txtPrice.Text))
+                errorMsgList.Add("價格為必填。");
 
             if (!this._isEditMode)  // 只有新增模式，才做封面圖的必填
             {
@@ -85,12 +88,16 @@ namespace EBookStore.BackAdmin
                 return;
             }
 
+            string priceStr = this.txtPrice.Text.Trim();
+            bool isValidPrice = decimal.TryParse(priceStr, out decimal price);
+
             Book bookModel = new Book()
             {
                 CategoryName = this.txtCategoryName.Text.Trim(),
                 AuthorName = this.txtAuthorName.Text.Trim(),
                 BookName = this.txtBookName.Text.Trim(),
                 Description = this.txtDescription.Text.Trim(),
+                Price = price,
                 IsEnable = this.ckbIsEnable.Checked,
             };
 
@@ -116,12 +123,12 @@ namespace EBookStore.BackAdmin
             }
 
             // Temp UserID
-            string userID = "11f49178-69bc-4057-ad06-7cbb74b4e38d";
-            bool isSuccess = Guid.TryParse(userID, out Guid gUserID);
+            string userIDStr = "11f49178-69bc-4057-ad06-7cbb74b4e38d";
+            bool isValidUserID = Guid.TryParse(userIDStr, out Guid userID);
 
             // 儲存
-            if (isSuccess)
-                this._bookMgr.CreateBook(bookModel, gUserID);
+            if (isValidUserID)
+                this._bookMgr.CreateBook(bookModel, userID);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

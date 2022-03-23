@@ -108,6 +108,7 @@
     <Content Include="Css\Global.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.jpg" />
+    <Content Include="JavaScript\OrderDetail.js" />
     <Content Include="JavaScript\BookList.js" />
     <Content Include="Login.aspx" />
     <Content Include="OrderDetail.aspx" />
@@ -117,7 +118,8 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="API\EBookStoreDataHandler.ashx" />
+    <Content Include="API\OrderDetailDataHandler.ashx" />
+    <Content Include="API\BookListDataHandler.ashx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -127,8 +129,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\EBookStoreDataHandler.ashx.cs">
-      <DependentUpon>EBookStoreDataHandler.ashx</DependentUpon>
+    <Compile Include="API\BookListDataHandler.ashx.cs">
+      <DependentUpon>BookListDataHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\OrderDetailDataHandler.ashx.cs">
+      <DependentUpon>OrderDetailDataHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="BackAdmin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
@@ -212,8 +217,11 @@
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="Managers\OrderManager.cs" />
+    <Compile Include="Managers\PaymentManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Managers\BookManager.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="OrderDetail.aspx.cs">

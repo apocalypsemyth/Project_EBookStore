@@ -49,7 +49,9 @@
 
             <div class="col-md-4">
                 <div class="book__add-shopping-cart-container">
-                    <asp:Button ID="btnAddShoppingCart" CssClass="book__add-shopping-cart" Text="加入購物車" runat="server" OnClick="btnAddShoppingCart_Click" />
+                    <%--<asp:Button ID="btnAddShoppingCart" CssClass="book__add-shopping-cart" Text="加入購物車" runat="server" OnClick="btnAddShoppingCart_Click" />--%>
+
+                    <button id="btnAddShoppingCart">Add shopping cart</button>
                 </div>
             </div>
         </div>

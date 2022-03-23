@@ -87,15 +87,6 @@ namespace EBookStore
         protected global::System.Web.UI.WebControls.Literal ltlEndDate;
 
         /// <summary>
-        /// btnAddShoppingCart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddShoppingCart;
-
-        /// <summary>
         /// rptMayInterestBookList control.
         /// </summary>
         /// <remarks>

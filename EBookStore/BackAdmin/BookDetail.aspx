@@ -23,6 +23,10 @@
             <td> <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine"></asp:TextBox> </td>
         </tr>
         <tr>
+            <th> 價格 (*) </th>
+            <td> <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox> </td>
+        </tr>
+        <tr>
             <th> 封面圖 (*) </th>
             <td> 
                 <asp:FileUpload ID="fuImage" runat="server" />
